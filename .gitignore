@@ -163,3 +163,19 @@ cython_debug/
 # Output folders
 *outputs
 *.Rhistory
+
+# Spatial data files
+*.shp
+*.cpg
+*.dbf
+*.prj
+*.xml
+*.shx
+*.gpkg
+*.qgz
+*.sbn
+*.sbx
+*.atx
+*.freelist
+*.gdb
+.gdb/*
