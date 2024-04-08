@@ -22,6 +22,7 @@ from census import Census
 from pathlib import Path
 gpd.options.io_engine = "pyogrio"
 
+#### NEW USERS - EDIT THESE VARIABLES
 # INPUT DIRECTORIES
 census_shapes_dir = Path(r'data\2020_census_tracts') # directory containing all census tract shapefiles
 vehicle_emissions_path = Path(r"data\national_hpms_emissions_all_vehicles_2020.csv") # Emission rates csv
@@ -32,8 +33,8 @@ shapefile_dir = Path(r'outputs\2020_tract_emissions_shapefiles') # directory to 
 csv_dir = Path(r'outputs\2020_tract_emissions_csvs') # directory to store output csvs
 
 # Insert your census API key - sign up for a key at https://api.census.gov/data/key_signup.html
-key = Census("")
 
+#### NEW USERS - DON'T EDIT BEYOND THIS POINT
 # Read in csv with all roadway segment emission rates
 all_vehicle_emission_rates = pd.read_csv(vehicle_emissions_path)
 

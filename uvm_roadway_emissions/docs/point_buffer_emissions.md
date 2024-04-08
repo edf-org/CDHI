@@ -1,27 +1,33 @@
 Author: Alex Adame  
 Project: Community Data Health Initiative
 ## Requirements
-Python client with pandas, geopandas, pyogrio, pathlib, and pygris
+Python 3.12.2
+
+Packages:
+
+    census 0.8.21
+    geopandas 0.14.3
+    pandas 2.2.1
+    pyogrio 0.7.2
 
 ## How to use
-Under "USER INPUT", insert the full file path to the:
+Under "NEW USERS - EDIT THESE VARIABLES", insert the file path to the:
+- census tract shapefile directory
 - emissions rate file (.csv)
 - HPMS roadways file (.gdb)
-- spatial data file containing the points of interest in any vector based spatial format (.shp, .gdb, .geojson, etc.)
-- directory for output files
+- directories for both output files
 
 Set the options for:
 - buffer radius in meters (default 804.7m which is ~1/2 mile)
 - state abbreviation, e.g. "MI"
-
-Run the script and the files will be generated in the output folder. The runtime may take upwards of 20 minutes. 
+- create_state_roadway_file - If True, this will output a shapefile of the roadways in the state of interest that can be used instead of the larger HPMS roadways file to cut down on processing time in the future
 
 ## Outputs
 Shapefile containing the emissions data with the point buffers as geometries: "{Input State Abbreviation}_emissions_around_points.shp"
->e.g. *"C:\Users\aadame\Documents\uvm_roadway_emissions\outputs\MI_emissions_around_points.shp"* 
+>e.g. *"uvm_roadway_emissions\outputs\MI_emissions_around_points.shp"* 
 
 A csv containing the same emissions data without the spatial component: "{Input State Abbreviation}_emissions_around_points.csv"
->e.g. *"C:\Users\aadame\Documents\uvm_roadway_emissions\outputs\MI_emissions_around_points.csv"*
+>e.g. *"uvm_roadway_emissions\outputs\MI_emissions_around_points.csv"*
 
 The output files will contain all fields in the provided point data along with fields for the four pollutant classes in the data(PM2.5, PM10, NOx, and NO2) aggregated by vehicle class (LDV, MDV, HDV, and Total). Emissions are in tons per year.
 
