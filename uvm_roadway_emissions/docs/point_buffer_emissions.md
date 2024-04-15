@@ -11,9 +11,11 @@ Packages:
     pyogrio 0.7.2
 
 ## How to use
+To obtain the emissions data and HPMS roadways file, contact EDF.
+
 Under "NEW USERS - EDIT THESE VARIABLES", insert the file path to the:
 - census tract shapefile directory
-- emissions rate file (.csv)
+- emissions rate file (.csv) - can be obtained from 
 - HPMS roadways file (.gdb)
 - directories for both output files
 
